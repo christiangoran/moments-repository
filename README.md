@@ -1,4 +1,64 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Getting started with React
+
+## Bootstrap-React
+
+1. npm install react-bootstrap bootstrap@4.6.0
+
+2. Then
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+  integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+  crossorigin="anonymous"
+/>
+
+in the head of index.html
+
+3. Then create folder "components" and "assets" in "src"
+
+## CSS styling
+
+1. Add google fonts in the head
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&display=swap" rel="stylesheet" />
+
+2. Inside "src" folder, remove the App.css file
+3. Add App.module.css instead in the same folder.
+
+Inside App.module.css:
+
+let’s set a class name for .App, and give it a font-family property of “DM Sans”, which is the font we just imported, and a backup of sans-serif. As our App component will hold all of our content, we’ll use this same class to set a background-color of #f8f8f8 and a minimum height of 100vh.
+
+4. Import it to App.js
+
+import styles from "./App.module.css";
+
+5. Then for the rest of the css files, create a folder in "src" called "styles"
+
+### Summarize CSS
+
+So to summarize, when working with React CSS, the main App.module.css file is for CSS styles you want to apply to your site as a whole.Each component should have its own module.css file for the styles relating to that component.
+When you want to use the styles in a module.css file, you need to import it at the top of the file for the component you want it with. Class names from your module.css file are applied to individual components using the {styles.ClassName} syntax.
+
+## React Routing
+
+npm install react-router-dom@5.3.0
+
+The BrowserRouter component uses the browser history API to keep our UI  
+in sync with the URL. It holds all the state required,  
+so it has to wrap around all the other react-router library components.
+Switch holds all the routes and renders the first one that matches the current url.
+A Route renders a given component when its path matches the current URL.
+A Link component is just like our good old friend the anchor tag,  
+but it’s used with react router to link to a different Route instead.
+To keep things tidy, our BrowserRouter will live in index.js, so let’s import it there.
+
+then add following to index.js:
+
+import { BrowserRouter as Router } from "react-router-dom";
+
+![Routing](readme_assets/routing.png)
 
 Welcome,
 
