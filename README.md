@@ -60,6 +60,43 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 ![Routing](readme_assets/routing.png)
 
+## Connecting React to API
+
+Go in to API heroku project and add following to config vars:
+
+CLIENT_ORIGIN : "url to React Heroku project"
+
+CLIENT_ORIGIN_DEV : "url to preview React project"
+
+Now we have told the API to accept request from our React project.
+Now we need to tell the React project to send requests to the API.
+
+1. For this we can use the Axios library, so we install that:
+
+npm install axios
+
+2. Now, let’s create the api folder inside "src" and create an axiosDefaults.js file inside it.
+
+Then we need to import axios and write the deployed Heroku API project.
+
+import axios from "axios";
+
+axios.default.baseURL = 'https://taskmanager-heroku-5052155856ae.herokuapp.com/';
+axios.default.headers.post['Content-Type'] = 'multipart/form-data';
+axios.defaults.withCredentials = true;
+
+3. And then import it to App.js
+
+import './api/axiosDefaults'
+
+4. Then we can add the \*.module.css files to "styles" folder
+
+5. Then within the "src" folder we create a "pages" folder, and within that folder we create an "auth" folder.
+
+6. Inside the "auth" folder create "SignUpForm.js" and add the standard code.
+
+7. Then add the SignUpForm to the route in App.js
+
 Welcome,
 
 This is the Code Institute student template for React apps on the Codeanywhere IDE. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.  
